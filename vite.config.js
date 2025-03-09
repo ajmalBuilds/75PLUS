@@ -14,10 +14,6 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    // Ensure the app supports client-side routing (for React Router)
-    historyFallback: true, // Correct Vite option
-  },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
+    historyApiFallback: true,  // Ensures React Router works in dev
   },
 });
