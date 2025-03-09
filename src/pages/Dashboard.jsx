@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GraduationCap, Percent, Calendar, Plus, Trash2, AlertCircle, CheckCircle, PieChart, MinusCircle, PlusCircle } from 'lucide-react';
 import Progressbar from '../components/ProgressBar';
 
 function Dashboard() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(() => {
+    const savedCourses = localStorage.getItem('courses');
+    return savedCourses ? JSON.parse(savedCourses) : [];
+  });
   const [requiredPercentage, setRequiredPercentage] = useState('75');
   const [newCourse, setNewCourse] = useState({
     id: '',
@@ -27,6 +30,10 @@ function Dashboard() {
     }
   };
 
+  useEffect(() => {
+    localStorage.setItem('courses', JSON.stringify(courses));
+  }, [courses]);
+  
   const handleDeleteCourse = (id) => {
     setCourses(courses.filter(course => course.id !== id));
   };
@@ -130,7 +137,7 @@ function Dashboard() {
             <GraduationCap className="w-10 h-10" />
             {/* <img src="src\assets\75Plus-logo.png" alt="" className='w-[190px] mix-blend-multiply ' /> */} Attendance Buddy
           </h1>
-          <p className="text-indigo-600 mt-2">Bunk Smart, Attend Smarter!</p>
+          <p className="text-indigo-600 mt-2">Attend Smart, Bunk Smarter!</p>
         </div>
 
         {courses.length > 0 && (
@@ -266,7 +273,7 @@ function Dashboard() {
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Present Days:</span>
+                    <span className="text-gray-600">Attended Hours:</span>
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => handleDecrement(course.id, 'attendedHours')}
@@ -286,7 +293,7 @@ function Dashboard() {
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Working Days:</span>
+                    <span className="text-gray-600">Total Hours:</span>
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => handleDecrement(course.id, 'workingHours')}
