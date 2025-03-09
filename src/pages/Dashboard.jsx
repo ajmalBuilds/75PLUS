@@ -133,7 +133,7 @@ function Dashboard() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-indigo-900 flex items-center justify-center gap-3">
+          <h1 className="md:text-4xl text-2xl font-bold text-indigo-900 flex items-center justify-center gap-3">
             <GraduationCap className="w-10 h-10" />
             {/* <img src="src\assets\75Plus-logo.png" alt="" className='w-[190px] mix-blend-multiply ' /> */} Attendance Buddy
           </h1>

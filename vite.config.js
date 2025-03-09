@@ -14,6 +14,9 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    historyApiFallback: true,  // Ensures React Router works in dev
+    historyApiFallback: true, // Ensure client-side routing works
+  },
+  optimizeDeps: {
+    exclude: ['lucide-react'],
   },
 });
