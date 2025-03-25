@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ananda';
+  src: url('/src/assets/fonts/AnandaBlack.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('/src/assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

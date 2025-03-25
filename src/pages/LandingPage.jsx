@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { GraduationCap, Clock, PieChart, Bell, ArrowRight } from 'lucide-react';
 
@@ -36,10 +37,10 @@ function LandingPage() {
                 <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                   <div className="rounded-md shadow">
                     <button
-                      onClick={() => navigate('/dashboard')}
+                      // onClick={() => navigate('/dashboard')}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                     >
-                      Get Started
+                      <Link to="/dashboard">Get Started</Link>
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </button>
                   </div>
@@ -126,10 +127,10 @@ function LandingPage() {
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
               <button
-                onClick={() => navigate('/dashboard')}
+                // onClick={() => navigate('/dashboard')}
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Get Started
+                <Link to="/dashboard">Get Started</Link>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
             </div>

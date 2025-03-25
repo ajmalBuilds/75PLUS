@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GraduationCap, Percent, Calendar, Plus, Trash2, AlertCircle, CheckCircle, PieChart, MinusCircle, PlusCircle } from 'lucide-react';
 import Progressbar from '../components/ProgressBar';
+import Footer from '../components/Footer';
 
 function Dashboard() {
   const [courses, setCourses] = useState(() => {
@@ -349,6 +350,8 @@ function Dashboard() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }
